@@ -87,7 +87,7 @@ public class TollRecord {
      * @return the total fare
      */
     public double getFare(){
-        return 0.0;
+        return TollSchedule.getFare(this.numOnExit, this.numOffExit);
     }
 
     /**
@@ -95,10 +95,16 @@ public class TollRecord {
      * @param o TollRecord Object
      * @return boolean if obects are equal
      */
-    public boolean equals(Object o){
-        if(o instanceof TollRecord){
-
-        return false;
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        if (!super.equals(object)) return false;
+        TollRecord that = (TollRecord) object;
+        return numOnExit == that.numOnExit &&
+                numOnTime == that.numOnTime &&
+                numOffExit == that.numOffExit &&
+                numOffTime == that.numOffTime &&
+                java.util.Objects.equals(vTag, that.vTag);
     }
 
     /**
@@ -106,7 +112,7 @@ public class TollRecord {
      * @return string representation of the object
      */
     public String toString(){
-        return "";
+        return "[", this.vTag,"]{(",this.numOnExit,",",this.numOnTime,"),(",this.numOffExit,",",this.numOffTime,")}";
     }
 
     /**
@@ -123,8 +129,8 @@ public class TollRecord {
      * @return a hash code value for the obect that conforms to the
      * definition
      */
-    public int hashCode(){
-        return 0;
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), vTag, numOnExit, numOnTime, numOffExit, numOffTime);
     }
 
     /**
@@ -133,7 +139,7 @@ public class TollRecord {
      * @return either negative, positive, or 0 depending on order
      */
     public int compareTo(TollRecord o){
-        return 0;
+        return (this.vtag.compareTo(o.vTag));
     }
 
     public static void main(String[] args){
@@ -141,3 +147,5 @@ public class TollRecord {
     }
 
 }
+
+

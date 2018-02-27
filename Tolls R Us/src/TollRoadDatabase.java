@@ -28,15 +28,16 @@ public class TollRoadDatabase {
      * @param eventFileName
      * will raise FileNotFoundExcpetion if file param cannot be found
      */
-    public TollRoadDatabase(String eventFileName){
+    public TollRoadDatabase(String eventFileName) throws FileNotFoundException{
+        Scanner scanner = new Scanner(new File(eventFileName));
 
     }
 
     /**
      *
-     * @param tag
-     * @param exit
-     * @param time
+     * @param tag the vehicle tag
+     * @param exit the exit used
+     * @param time the time when exit used
      */
     private void enterEvent(String tag, int exit, int time){
 
