@@ -23,4 +23,71 @@ public class TollRoadDatabase {
      */
     public static final double SPEED_LIMIT = 65.0;
 
+    /**
+     * reads the event file and builds all data structures needed
+     * @param eventFileName
+     * will raise FileNotFoundExcpetion if file param cannot be found
+     */
+    public TollRoadDatabase(String eventFileName){
+
+    }
+
+    /**
+     *
+     * @param tag
+     * @param exit
+     * @param time
+     */
+    private void enterEvent(String tag, int exit, int time){
+
+    }
+
+    /**
+     * prints out the number of completed trips
+     */
+    public void summaryReport(){
+
+    }
+
+    /**
+     * print out a report listing the vehicles that are still on the toll road
+     */
+    public void onRoadReport(){
+
+    }
+
+    /**
+     * prints out a billing report for the vehicles that completed trips on the
+     * toll roads
+     */
+    public void printBills(){
+
+    }
+
+    private double bill(String tag){
+
+    }
+
+    /**
+     * List cars going above the speed limit
+     */
+    public void speederReport(){
+
+    }
+
+    /**
+     * print the summary information for a single customer
+     * @param tag the tag of the vehicle of the customer
+     */
+    public void printCustSummary(String tag){
+
+    }
+
+    /**
+     * print all toll records
+     * @param exit the customers on and off point
+     */
+    public void printExitActivity(int exit){
+
+    }
 }
